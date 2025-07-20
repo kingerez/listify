@@ -1,7 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
 import { DashboardLayout } from '../components/Layout';
 import { RiAddLine, RiCheckboxCircleLine, RiCalendarLine, RiFlag2Line } from '../lib/icons';
+import { StatisticsCards } from '../components/StatisticsCards';
 import { Icon } from '../components/Icon';
+import { Calendar } from '../components/Calendar';
 
 export const meta: MetaFunction = () => {
   return [
@@ -100,20 +102,7 @@ export default function Index() {
 
         {/* Statistics Cards Preview */}
         <section className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-success text-white rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold mb-2">04</div>
-              <div className="text-sm opacity-90">COMPLETED</div>
-            </div>
-            <div className="bg-coral text-white rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold mb-2">15</div>
-              <div className="text-sm opacity-90">PENDING</div>
-            </div>
-            <div className="bg-primary text-white rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold mb-2">1,500</div>
-              <div className="text-sm opacity-90">TOTAL PROJECTS</div>
-            </div>
-          </div>
+          <StatisticsCards completed={4} pending={15} totalProjects={1500} />
         </section>
 
         {/* Main Content Grid */}
@@ -124,43 +113,7 @@ export default function Index() {
               <Icon icon={RiCalendarLine} className="mr-2 text-primary" />
               Calendar
             </h2>
-            <div className="bg-surface rounded-lg p-6 shadow-sm">
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-semibold text-text-primary">04, April 2024</h3>
-                <p className="text-text-secondary text-sm">Sat</p>
-              </div>
-              
-              {/* Simple calendar grid preview */}
-              <div className="grid grid-cols-7 gap-1 text-center text-sm">
-                {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day) => (
-                  <div key={day} className="p-2 text-text-secondary font-medium">
-                    {day}
-                  </div>
-                ))}
-                {Array.from({ length: 35 }, (_, i) => {
-                  const day = i - 6; // Start from previous month
-                  const isCurrentMonth = day > 0 && day <= 30;
-                  const isToday = day === 4;
-                  
-                  return (
-                    <div
-                      key={i}
-                      className={`
-                        p-2 rounded
-                        ${isCurrentMonth 
-                          ? isToday 
-                            ? 'bg-primary text-white font-semibold' 
-                            : 'text-text-primary hover:bg-primary/10'
-                          : 'text-text-muted'
-                        }
-                      `}
-                    >
-                      {isCurrentMonth ? day : ''}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <Calendar />
           </section>
 
           {/* Task Preview */}

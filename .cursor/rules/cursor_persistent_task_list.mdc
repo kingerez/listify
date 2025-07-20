@@ -1,0 +1,86 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 🧠 Cursor Rule: Persistent Task List for Code Projects
+
+## ✅ Purpose
+Enable persistent task tracking across chat sessions, allowing the assistant to remember, display, and help complete development tasks over time — similar to Claude’s code task list functionality.
+
+---
+
+## 🧩 Core Behaviors
+
+### 1. 🧠 Persistent Memory Storage
+- **Commit** the task list (including checkbox states) to memory when first created or modified.
+- Store as structured data with:
+  - Task title
+  - Optional description
+  - Checkbox status (done / not done)
+  - Optional tags (e.g., `setup`, `frontend`, `backend`)
+  - Optional priority (e.g., high/medium/low)
+
+### 2. 📋 Load Into New Sessions
+- On **every new chat window**, **automatically add the stored task list to context**, rendering it in a readable format with checkboxes.
+- Example display format:
+  ```
+  🧾 Task List:
+  - [x] Initialize Remix project
+  - [x] Set up MongoDB in Docker
+  - [ ] Install react-icons
+  - [ ] Break down UI components from Figma
+  ```
+
+### 3. ☑️ Visual Progress Tracking
+- The task list is displayed with markdown-style checkboxes for visual clarity.
+- Cursor should be able to **mark tasks as complete/incomplete** via simple commands (e.g., “mark task 2 as done”).
+
+### 4. 🎯 Smart Task Suggestion
+- Cursor will **analyze the current progress and suggest the most relevant next task**.
+  - It may prioritize unfinished tasks by tags (e.g., `setup` tasks first), or by dependency order.
+  - If all tasks in one group are done, it suggests the next group (e.g., `UI components` after `Setup`).
+  - Cursor should explain *why* it suggests that task (e.g., “Now that the DB is ready, we can build the models”).
+
+---
+
+## ⚙️ Bonus Suggestions (Enhancements)
+
+### 5. 🧠 Context-Aware Updates
+- Cursor should be able to **automatically infer new tasks** based on conversations (e.g., if user says “we should also add validation”), and ask if you want to add it to the task list.
+- Similarly, if a task is clearly completed in code or discussion, Cursor should ask if you want to mark it as done.
+
+### 6. 🗂️ Task Grouping
+- Support optional grouping of tasks (like “Setup”, “UI Components”, “Backend Logic”).
+- These groups can be collapsed/expanded visually in the task list for better clarity.
+
+### 7. 🧾 Export/Import Support
+- Allow exporting the task list to plain markdown or a `.tasklist.json` format for backup or sharing across projects.
+- Could also support importing existing task lists.
+
+### 8. 🛑 Edge Case Handling
+- If the task list becomes very long (>20 items), summarize unchecked tasks in collapsed format unless expanded.
+- Prevent redundant duplicates when a user rephrases an existing task.
+
+---
+
+## 🔄 Example Interaction
+
+**User:** "We should also add a setup step for Tailwind CSS."  
+**Cursor:** "Would you like me to add a new task: `Set up Tailwind CSS` to the `Setup` group?" ✅ / ❌
+
+**User:** "Can you show me where we're at?"  
+**Cursor:**
+```
+🧾 Task List (4/6 completed):
+
+✅ [x] Initialize Remix project  
+✅ [x] Set up MongoDB in Docker  
+⬜ [ ] Install react-icons  
+⬜ [ ] Break down UI components from Figma  
+✅ [x] Create base layout components  
+✅ [x] Set up Tailwind CSS  
+
+🔄 Suggested Next Task:
+➡️ **Break down UI components from Figma** — This will unblock individual component tasks next.
+```

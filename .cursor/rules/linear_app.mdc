@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Treat all tasks in linear.app as a real-life software developer: when you start a task change its status to “in progress”, and then to “done” when completed. Use the linear.app MCP to achieve this.
+
+** DON'T FORGET TO MOVE COMPLETED TASKS TO DONE!!! **

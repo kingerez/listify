@@ -6,7 +6,7 @@ alwaysApply: true
 # 🧠 Cursor Rule: Persistent Task List for Code Projects
 
 ## ✅ Purpose
-Enable persistent task tracking across chat sessions, allowing the assistant to remember, display, and help complete development tasks over time — similar to Claude’s code task list functionality.
+Enable persistent task tracking across chat sessions, allowing the assistant to remember, display, and help complete development tasks over time — similar to Claude's code task list functionality.
 
 ---
 
@@ -34,24 +34,30 @@ Enable persistent task tracking across chat sessions, allowing the assistant to 
 
 ### 3. ☑️ Visual Progress Tracking
 - The task list is displayed with markdown-style checkboxes for visual clarity.
-- Cursor should be able to **mark tasks as complete/incomplete** via simple commands (e.g., “mark task 2 as done”).
+- Cursor should be able to **mark tasks as complete/incomplete** via simple commands (e.g., "mark task 2 as done").
 
 ### 4. 🎯 Smart Task Suggestion
 - Cursor will **analyze the current progress and suggest the most relevant next task**.
   - It may prioritize unfinished tasks by tags (e.g., `setup` tasks first), or by dependency order.
   - If all tasks in one group are done, it suggests the next group (e.g., `UI components` after `Setup`).
-  - Cursor should explain *why* it suggests that task (e.g., “Now that the DB is ready, we can build the models”).
+  - Cursor should explain *why* it suggests that task (e.g., "Now that the DB is ready, we can build the models").
+
+### 5. We're using linear.app for this project. Use the linear.app MCP whenever required.
+It is *SUPER IMPORTANT* for the project's tasks real status to be mirrored in the linear.app board.
+- *ALWAYS* move a task to "in progress" when you start working on a new task
+- *ALWAYS* move a task to "done" once the task is completed.
+
 
 ---
 
 ## ⚙️ Bonus Suggestions (Enhancements)
 
 ### 5. 🧠 Context-Aware Updates
-- Cursor should be able to **automatically infer new tasks** based on conversations (e.g., if user says “we should also add validation”), and ask if you want to add it to the task list.
+- Cursor should be able to **automatically infer new tasks** based on conversations (e.g., if user says "we should also add validation"), and ask if you want to add it to the task list.
 - Similarly, if a task is clearly completed in code or discussion, Cursor should ask if you want to mark it as done.
 
 ### 6. 🗂️ Task Grouping
-- Support optional grouping of tasks (like “Setup”, “UI Components”, “Backend Logic”).
+- Support optional grouping of tasks (like "Setup", "UI Components", "Backend Logic").
 - These groups can be collapsed/expanded visually in the task list for better clarity.
 
 ### 7. 🧾 Export/Import Support
@@ -84,3 +90,38 @@ Enable persistent task tracking across chat sessions, allowing the assistant to 
 🔄 Suggested Next Task:
 ➡️ **Break down UI components from Figma** — This will unblock individual component tasks next.
 ```
+
+---
+
+# 📋 LISTIFY PROJECT TASK LIST
+
+## 🧾 Task List (1/16 completed):
+
+### 🔧 Setup (Priority)
+- [x] **LIS2-1**: Initialize Remix project `#setup #high` ✅ **DONE**
+- [ ] **LIS2-2**: Set up MongoDB in Docker container `#setup #high`
+- [ ] **LIS2-3**: Install and configure react-icons `#setup #medium`
+
+### 🎨 UI Components
+- [ ] **LIS2-4**: Create Header/Navigation Component `#frontend #medium`
+- [ ] **LIS2-5**: Build Calendar Component `#frontend #medium`
+- [ ] **LIS2-6**: Create Task Card Component `#frontend #medium`
+- [ ] **LIS2-7**: Build Statistics Cards Component `#frontend #medium`
+- [ ] **LIS2-8**: Create Sidebar Component `#frontend #medium`
+- [ ] **LIS2-9**: Build User Avatar Component `#frontend #low`
+- [ ] **LIS2-10**: Create Footer Component `#frontend #low`
+
+### 🏗️ Layout & Architecture
+- [ ] **LIS2-11**: Set up Main Layout and Routing `#frontend #medium`
+- [ ] **LIS2-12**: Create Design System Utilities `#frontend #medium`
+
+### 🔗 Backend & Data
+- [ ] **LIS2-13**: Create Task Data Models and API Routes `#backend #high`
+
+### 🔄 Integration & Polish
+- [ ] **LIS2-14**: Integrate Dashboard Components `#frontend #medium`
+- [ ] **LIS2-15**: Responsive Design and Mobile Optimization `#improvement #medium`
+- [ ] **LIS2-16**: Testing, Polish and Final Review `#improvement #low`
+
+## 🔄 Suggested Next Task:
+➡️ **Set up MongoDB in Docker container (LIS2-2)** — Now that Remix is ready, let's get the database infrastructure in place for data storage.

@@ -3,6 +3,12 @@ description:
 globs: 
 alwaysApply: true
 ---
-Treat all tasks in linear.app as a real-life software developer: when you start a task change its status to “in progress”, and then to “done” when completed. Use the linear.app MCP to achieve this.
+When working on tasks in Linear.app, follow standard real-world software development practices for task lifecycle management:
+	•	Start of Task:
+As soon as you begin working on a task, immediately change its status to “In Progress” using the Linear MCP interface.
+	•	Completion of Task:
+Once the task is completed, update its status to “Done” without delay using the MCP.
 
-** DON'T FORGET TO MOVE COMPLETED TASKS TO DONE!!! **
+🔔 Reminder:
+Always move completed tasks to “Done.”
+Forgetting to update task status causes confusion and disrupts workflow tracking.

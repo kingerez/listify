@@ -82,16 +82,16 @@ export default function Index() {
             <input
               type="text"
               placeholder="type Title of task"
-              className="flex-1 bg-[#dbe2ef] placeholder:text-text-secondary rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="flex-1 bg-lavender/30 placeholder:text-text-secondary rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             <input
               type="text"
               placeholder="Detail of your task"
-              className="flex-1 bg-[#dbe2ef] placeholder:text-text-secondary rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="flex-1 bg-lavender/30 placeholder:text-text-secondary rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             <button
               type="submit"
-              className="bg-success text-white rounded-lg px-6 py-3 flex items-center justify-center hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-success/20"
+              className="bg-button-primary text-white rounded-lg px-6 py-3 flex items-center justify-center hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-success/20"
             >
               <Icon icon={RiAddLine} size="md" />
             </button>
@@ -105,7 +105,7 @@ export default function Index() {
               <div className="text-3xl font-bold mb-2">04</div>
               <div className="text-sm opacity-90">COMPLETED</div>
             </div>
-            <div className="bg-salmon text-white rounded-lg p-6 text-center">
+            <div className="bg-coral text-white rounded-lg p-6 text-center">
               <div className="text-3xl font-bold mb-2">15</div>
               <div className="text-sm opacity-90">PENDING</div>
             </div>
@@ -182,7 +182,7 @@ export default function Index() {
                   <div className="flex items-center mt-2 text-xs space-x-3">
                     <span className="text-text-secondary">Jul 20, 2025</span>
                     <span className="bg-surface px-2 py-1 rounded text-text-muted">learning</span>
-                    <span className="bg-salmon text-white px-2 py-1 rounded">high</span>
+                    <span className="bg-coral text-white px-2 py-1 rounded">high</span>
                   </div>
                 </div>
               </div>

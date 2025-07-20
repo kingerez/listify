@@ -29,7 +29,7 @@ export function Header({
   ];
 
   return (
-    <header className="bg-[#f2eaea] shadow-sm">
+    <header className="bg-lavender/20 shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Left Section - Logo/Brand */}

@@ -1,40 +1,132 @@
-# Welcome to Remix!
+# Listify - Todo App
 
-- 📖 [Remix docs](https://remix.run/docs)
+A beautiful todo application built with Remix, MongoDB, and Tailwind CSS.
 
-## Development
+## 🚀 Quick Start
 
-Run the dev server:
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- Docker and Docker Compose
+- Git
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```sh
+   git clone <repository-url>
+   cd cursor-listify
+   ```
+
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+3. **Start MongoDB with Docker**
+   ```sh
+   docker compose up -d
+   ```
+   
+   This will start a MongoDB container with:
+   - **Port**: 27017
+   - **Username**: admin
+   - **Password**: password
+   - **Database**: listify
+
+4. **Set up environment variables**
+   ```sh
+   cp .env.example .env
+   ```
+   
+   The `.env` file contains:
+   ```
+   DATABASE_URL="mongodb://admin:password@localhost:27017/listify?authSource=admin"
+   NODE_ENV=development
+   PORT=3000
+   SESSION_SECRET="your-secret-key-change-in-production"
+   ```
+
+5. **Start the development server**
+   ```sh
+   npm run dev
+   ```
+
+6. **Verify everything works**
+   - App: http://localhost:5173 (or another port if 5173 is busy)
+   - Health Check: http://localhost:5173/api/health
+
+## 🐳 Docker Commands
 
 ```sh
+# Start MongoDB container
+docker compose up -d
+
+# Stop MongoDB container
+docker compose down
+
+# View container logs
+docker compose logs mongodb
+
+# Access MongoDB shell
+docker exec -it listify-mongodb mongosh -u admin -p password --authenticationDatabase admin
+```
+
+## 📁 Project Structure
+
+```
+app/
+├── lib/
+│   ├── db.server.ts          # Database connection utility
+│   └── models/
+│       └── task.server.ts    # Task model and operations
+├── routes/
+│   ├── _index.tsx           # Main dashboard
+│   └── api.health.ts        # Health check endpoint
+└── ...
+```
+
+## 🎨 Design System
+
+This project uses a custom Tailwind CSS configuration with:
+- **Poppins** font family
+- Custom color palette matching the Figma design
+- Responsive breakpoints
+- Design tokens for consistency
+
+## 🔧 Development
+
+```sh
+# Run the dev server
 npm run dev
-```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
+# Build for production
 npm run build
-```
 
-Then run the app in production mode:
-
-```sh
+# Start production server
 npm start
+
+# Type checking
+npm run typecheck
+
+# Linting
+npm run lint
 ```
 
-Now you'll need to pick a host to deploy it to.
+## 🌟 Features
 
-### DIY
+- ✅ Remix with TypeScript
+- ✅ MongoDB with Docker
+- ✅ Tailwind CSS with custom design system
+- ✅ Health monitoring
+- 🚧 Task management (coming soon)
+- 🚧 User authentication (coming soon)
+- 🚧 Real-time updates (coming soon)
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+## 📝 API Endpoints
 
-Make sure to deploy the output of `npm run build`
+- `GET /api/health` - Application health check
 
-- `build/server`
-- `build/client`
+---
 
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+**Happy coding! 🎯**

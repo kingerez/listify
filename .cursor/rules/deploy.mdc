@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+name: "Deploy to Vercel"
+description: "Invokes the Vercel CLI to push a production deployment"
+
+Whenever the user mentions this rule, run "vercel --prod" in the CLI to deploy the app.

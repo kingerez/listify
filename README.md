@@ -1,3 +1,43 @@
+## 🚀 Deployment with Vercel
+
+This application can be deployed to Vercel for production hosting. We've included a `vercel.json` configuration to handle both static assets and server functions.
+
+### 1. Build for Production
+
+```bash
+npm run build
+```
+
+### 2. Deploy to Vercel
+
+```bash
+npx vercel --prod
+```
+
+Follow the prompts and set the following environment variables in your Vercel project:
+
+- `MONGODB_URI`: MongoDB connection string (e.g., `mongodb+srv://...`)
+- `SESSION_SECRET`: Your session encryption secret
+
+You can add these via the CLI:
+
+```bash
+npx vercel env add MONGODB_URI production
+npx vercel env add SESSION_SECRET production
+```
+
+### 3. Local Development with Vercel CLI (Optional)
+
+```bash
+npx vercel dev
+```
+
+This will run the Remix dev server along with any Vercel function mocks.
+
+For more advanced usage, see [Vercel Docs](https://vercel.com/docs) and [Remix on Vercel](https://remix.run/docs/en/v2/guides/deployment/vercel).
+
+---
+
 # Listify - Task Management Dashboard
 
 A modern task management dashboard built with Remix, TypeScript, and MongoDB.

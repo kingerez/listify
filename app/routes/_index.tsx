@@ -42,12 +42,24 @@ export default function Index() {
               </div>
             </div>
             
-            <div className="pt-2">
+            <div className="pt-2 space-x-4 flex flex-wrap gap-2">
               <a 
                 href="/icons-demo" 
                 className="text-blue-600 hover:text-blue-800 text-sm underline"
               >
-                View Full Icons Demo →
+                Icons Demo →
+              </a>
+              <a 
+                href="/design-system" 
+                className="text-primary-600 hover:text-primary-800 text-sm underline"
+              >
+                Design System →
+              </a>
+              <a 
+                href="/header-demo" 
+                className="text-emerald-600 hover:text-emerald-800 text-sm underline"
+              >
+                Header Demo →
               </a>
             </div>
           </div>

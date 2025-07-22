@@ -1,7 +1,5 @@
 ---
-description: 
-globs: 
-alwaysApply: true
+alwaysApply: false
 ---
 # 🧠 Cursor Rule: Persistent Task List for Code Projects
 

@@ -37,7 +37,6 @@ export {
   FiFlag,
   FiBookmark,
   FiStar,
-  FiTrendingUp,
 } from "react-icons/fi";
 
 // Status & Communication Icons

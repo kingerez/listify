@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { Header } from "~/components";
 import type { LinksFunction } from "@remix-run/node";
 
 import "./styles/globals.css";
@@ -23,6 +24,21 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const handleProfileClick = () => {
+    // TODO: Navigate to profile page when implemented
+    console.log("Navigate to profile");
+  };
+
+  const handleSettingsClick = () => {
+    // TODO: Navigate to settings page when implemented
+    console.log("Navigate to settings");
+  };
+
+  const handleLogoutClick = () => {
+    // TODO: Implement logout functionality
+    console.log("Logout user");
+  };
+
   return (
     <html lang="en">
       <head>
@@ -32,7 +48,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        {/* Global Header */}
+        <Header
+          userName="Aqeel"
+          onProfileClick={handleProfileClick}
+          onSettingsClick={handleSettingsClick}
+          onLogoutClick={handleLogoutClick}
+        />
+        
+        {/* Main Content Area */}
+        <main className="min-h-screen bg-neutral-50 dark:bg-neutral-900 pt-16">
+          {children}
+        </main>
+        
         <ScrollRestoration />
         <Scripts />
       </body>

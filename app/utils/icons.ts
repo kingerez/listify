@@ -49,6 +49,7 @@ export {
   FiBell,
   FiEye,
   FiEyeOff,
+  FiLogOut,
 } from "react-icons/fi";
 
 // File & Data Icons

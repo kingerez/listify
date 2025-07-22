@@ -160,6 +160,78 @@ import { UserDropdown } from "~/components";
 />
 ```
 
+## 🔎 FilterActionBar Component
+
+Displays a set of filter buttons with active/inactive states and an action button for adding tasks.
+
+```tsx
+import FilterActionBar from "~/components/FilterActionBar";
+
+<FilterActionBar
+  filters={[
+    { label: "All", value: "All" },
+    { label: "Active", value: "Active" },
+    { label: "Completed", value: "Completed" },
+  ]}
+  activeFilter={activeFilter}
+  onFilterChange={setActiveFilter}
+  onActionClick={handleAddTask}
+/>
+```
+
+### Props
+
+```ts
+interface FilterActionBarProps {
+  filters: { label: string; value: string }[];  // Options for filter buttons
+  activeFilter: string;                        // Currently selected filter value
+  onFilterChange: (value: string) => void;    // Callback when a filter button is clicked
+  onActionClick: () => void;                 // Callback when the action button is clicked
+}
+```
+
+### Styling & Accessibility
+
+- **Container:** `.container-app`, `.bg-white dark:bg-neutral-800`, `.border-b`
+- **Filter Buttons:** `.btn`, `.btn-sm`, `.btn-primary` (active), `.btn-outline` (inactive)
+- **Action Button:** `.btn`, `.btn-primary`, `.btn-sm`, with `inline-flex` and `gap-2`
+- **Icons:** Uses `FiFilter` for filters & `FiPlus` for action, with accessible labels
+- **ARIA:** `aria-pressed` on filter buttons for screen readers
+- **Keyboard:** All buttons focusable with visible focus rings
+
+## 📅 CalendarWidget Component
+
+Displays a calendar month view with date selection functionality.
+
+```tsx
+import CalendarWidget from "~/components/CalendarWidget";
+
+<CalendarWidget
+  initialDate={new Date()}
+  onDateSelect={(date) => console.log(date)}
+/>
+```
+
+### Props
+
+```ts
+interface CalendarWidgetProps {
+  initialDate?: Date;                // Defaults to today
+  onDateSelect?: (date: Date) => void; // Callback when a date is clicked
+}
+```
+
+### Styling & Accessibility
+
+- **Container:** `.card`, `.bg-white dark:bg-neutral-800`, `.rounded-lg`, `.border`
+- **Header Navigation:** `.btn`, `.btn-sm`, `.font-semibold`, with left/right chevrons
+- **Weekdays Row:** `.grid grid-cols-7`, `.text-center`, `.text-xs font-medium`
+- **Date Buttons:** `.w-8 h-8`, `.flex-center`, rounded borders, active states:
+  - Selected: `bg-primary-600 text-white`
+  - Today: `bg-primary-100 text-primary-700`
+  - Hover: `hover:bg-neutral-100 dark:hover:bg-neutral-700`
+- **Keyboard:** All dates are buttons, focusable with visible rings
+
 ## 📋 Component Checklist
 
 When creating new components, ensure they follow these standards:

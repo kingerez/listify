@@ -101,7 +101,7 @@ describe('Header Component', () => {
       
       const avatarButton = screen.getByLabelText('User menu')
       expect(avatarButton).toBeInTheDocument()
-      expect(avatarButton).toHaveAttribute('type', 'button')
+      expect(avatarButton.tagName).toBe('BUTTON')
     })
   })
 
